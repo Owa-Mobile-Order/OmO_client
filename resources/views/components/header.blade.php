@@ -19,7 +19,7 @@
 
         <div
             class="flex h-10 w-28 rounded-md border border-gray-400 text-black hover:bg-gray-100 transition my-4 lg:w-32">
-            <a href="/login" class="flex items-center w-full h-full justify-center">Login</a>
+            <a href="/login" class="flex items-center w-full h-full justify-center">ログイン</a>
         </div>
     </div>
 </nav>
