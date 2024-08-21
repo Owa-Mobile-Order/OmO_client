@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日のメニュー</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-5 px-4">
+        <ul class="flex mb-4 space-x-2" id="menuTabs" role="tablist">
+            <li role="presentation">
+                <button class="px-4 py-2 rounded-full bg-blue-500 text-white" id="all-tab" data-category="all" type="button" role="tab" aria-controls="all" aria-selected="true">すべて</button>
+            </li>
+            <li role="presentation">
+                <button class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white" id="noodles-tab" data-category="noodles" type="button" role="tab" aria-controls="noodles" aria-selected="false">麺類</button>
+            </li>
+            <li role="presentation">
+                <button class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white" id="donburi-tab" data-category="donburi" type="button" role="tab" aria-controls="donburi" aria-selected="false">丼類</button>
+            </li>
+            <li role="presentation">
+                <button class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white" id="teishoku-tab" data-category="teishoku" type="button" role="tab" aria-controls="teishoku" aria-selected="false">定食</button>
+            </li>
+            <li role="presentation">
+                <button class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white" id="others-tab" data-category="others" type="button" role="tab" aria-controls="others" aria-selected="false">その他</button>
+            </li>
+        </ul>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="menuItems">
+            <div class="mb-4" data-category="noodles">
+                <a href="detail.html?item=shoyu-ramen" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="醤油ラーメン">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">醤油ラーメン</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥800</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦、卵、大豆</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="noodles">
+                <a href="detail.html?item=miso-ramen" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="味噌ラーメン">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">味噌ラーメン</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥900</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦、卵、大豆</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="noodles">
+                <a href="detail.html?item=suzukuchin" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="冷やし中華">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">冷やし中華</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥700</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦、卵</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="noodles">
+                <a href="detail.html?item=kitsune-udon" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="きつねうどん">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">きつねうどん</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥600</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="donburi">
+                <a href="detail.html?item=katsu-don" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="カツ丼">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">カツ丼</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥1,000</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦、卵</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="donburi">
+                <a href="detail.html?item=oyako-don" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="親子丼">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">親子丼</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥1,200</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦、卵</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="donburi">
+                <a href="detail.html?item=gyu-don" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="牛丼">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">牛丼</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥1,500</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="donburi">
+                <a href="detail.html?item=ten-don" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="天丼">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">天丼</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥1,000</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="teishoku">
+                <a href="detail.html?item=saba-shioyaki" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="さばの塩焼き定食">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">さばの塩焼き定食</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥1,200</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="teishoku">
+                <a href="detail.html?item=chicken-nanban" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="チキン南蛮定食">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">チキン南蛮定食</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥1,000</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="teishoku">
+                <a href="detail.html?item=buta-shoyu" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="豚の生姜焼き定食">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">豚の生姜焼き定食</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥1,300</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="teishoku">
+                <a href="detail.html?item=hamburg" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="ハンバーグ定食">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">ハンバーグ定食</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥1,000</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="others">
+                <a href="detail.html?item=curry-rice" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="カレーライス">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">カレーライス</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥800</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="others">
+                <a href="detail.html?item=omurice" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="オムライス">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">オムライス</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥700</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-4" data-category="others">
+                <a href="detail.html?item=napolitan" class="text-decoration-none text-gray-900">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="ナポリタン">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center">
+                                <h5 class="text-lg font-semibold mb-0">ナポリタン</h5>
+                                <p class="mb-0"><strong class="text-2xl text-red-600">¥1,000</strong></p>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600">特定原材料：小麦</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
