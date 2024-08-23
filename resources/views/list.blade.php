@@ -1,8 +1,10 @@
 <?php
-$data = [
-  'name' => '醤油ラーメン',
-  'id' => 'syoyu_ramen',
-]; ?>
+
+use Illuminate\Support\Facades\DB;
+
+$data = DB::select('SELECT * FROM tests');
+var_dump($data);
+?>
 
     <!DOCTYPE html>
 <html lang="ja">
@@ -52,7 +54,8 @@ $data = [
             <div class="mb-4" data-category="{{ $item["category"] }}">
                 <a href="/detail/{{ $item["id"] }}" class="text-decoration-none text-gray-900">
                     <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover" alt="{{ $item["name"] }}">
+                        <img src="https://placehold.jp/300x300.png" class="w-full h-48 object-cover"
+                             alt="{{ $item["name"] }}">
                         <div class="p-4">
                             <div class="flex justify-between items-center">
                                 <h5 class="text-lg font-semibold mb-0">{{ $item["name"] }}</h5>

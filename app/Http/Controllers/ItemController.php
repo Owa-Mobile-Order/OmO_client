@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ItemController extends Controller
 {
@@ -10,6 +11,7 @@ class ItemController extends Controller
   {
     // JSONデータ受け取り
     // $json_items = file_get_contents("/api/items");
+
     $json_items = [
       [
         'name' => '醤油ラーメン',
