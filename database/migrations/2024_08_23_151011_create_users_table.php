@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id()->primary()->autoIncrement();
 
             $table->string('email');
-            $table->string('password', 64);
+            $table->string('password', 60);
             $table->string('display_name', 32);
             $table->string('student_id', 8);
 
