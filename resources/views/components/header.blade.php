@@ -1,3 +1,4 @@
+<div class="fixed w-full">
 <nav class="flex items-center justify-between flex-wrap px-24 py-5">
   <div class="flex items-center flex-shrink-0 text-white mr-6">
     <a href="/">
@@ -43,3 +44,4 @@
   </div>
 </nav>
 <hr class="border-gray-200 mx-4" />
+</div>
