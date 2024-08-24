@@ -5,7 +5,7 @@
 
 @section('head')
   <link rel="stylesheet" href="/css/style.css" />
-  <script src="/js/script.js"></script>
+  <script src="/js/menu_filter.js"></script>
 @endsection
 
 @section('body')
