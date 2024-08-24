@@ -67,10 +67,10 @@
         <button
           class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
           id="others-tab"
-          data-category="3"
+          data-category="4"
           type="button"
           role="tab"
-          aria-controls="3"
+          aria-controls="4"
           aria-selected="false"
         >
           その他
