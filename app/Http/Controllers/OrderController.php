@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
@@ -26,6 +25,6 @@ class OrderController extends Controller
   // メニューを取得
   private function getMenuItems()
   {
-    return DB::table('menu_items')->get();
+    return DB::table('menu_items')->orderBy('name', 'asc')->get();
   }
 }
