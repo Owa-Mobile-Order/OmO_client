@@ -9,7 +9,7 @@
 @endsection
 
 @section('body')
-  <div class="container mx-auto mt-5 px-4">
+  <div class="container mx-auto px-4">
     <ul class="flex mb-4 space-x-2" id="menuTabs" role="tablist">
       <li role="presentation">
         <button

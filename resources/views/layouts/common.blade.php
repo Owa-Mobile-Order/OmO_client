@@ -11,5 +11,7 @@
 </head>
 <body>
   @include('components.header')
-  @yield('body')
+  <div class="pt-20">
+    @yield('body')
+  </div>
 </body>
