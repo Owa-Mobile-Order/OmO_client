@@ -8,8 +8,8 @@ Route::get('/', function () {
   return view('index');
 });
 
-Route::get('/order', [OrderController::class, 'index']);
 Route::get('/order/{id}', [OrderController::class, 'detail']);
+Route::get('/order', [OrderController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index']);
 

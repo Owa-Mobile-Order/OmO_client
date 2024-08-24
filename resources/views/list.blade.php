@@ -81,7 +81,7 @@
       @foreach ($items as $item)
         <div class="mb-4" data-category="{{ $item->category_id }}">
           <a
-            href="/detail/{{ $item->id }}"
+            href="/order/{{ $item->id }}"
             class="text-decoration-none text-gray-900"
           >
             <div class="bg-white rounded-lg shadow-md overflow-hidden">

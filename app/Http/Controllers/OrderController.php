@@ -22,9 +22,22 @@ class OrderController extends Controller
     ]);
   }
 
-  // メニューを取得
-  private function getMenuItems()
+  public function detail($id = null)
   {
+    $item = $this->getMenuItems($id);
+
+    return view('detail', [
+      'item' => $item,
+    ]);
+  }
+
+  // メニューを取得
+  private function getMenuItems($id = null)
+  {
+    if ($id) {
+      return DB::table('menu_items')->where('id', $id)->first();
+    }
+
     return DB::table('menu_items')->orderBy('name', 'asc')->get();
   }
 }
