@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::get('/item/{id}', [ItemController::class, 'detail']);
 
-Route::get('/item', [ItemController::class, 'index']);
+Route::get('/order', [ItemController::class, 'index']);
 
 Auth::routes();
 
