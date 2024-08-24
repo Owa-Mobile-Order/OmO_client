@@ -8,13 +8,13 @@
     <div class="text-base lg:flex-grow">
       <a
         href="/order"
-        class="block mt-4 lg:inline-block lg:mt-0 mr-4 hover:underline"
+        class="block mt-4 lg:inline-block lg:mt-0 mr-8 hover:underline"
       >
         予約
       </a>
       <a
         href="/terms"
-        class="block mt-4 lg:inline-block lg:mt-0 mr-4 hover:underline"
+        class="block mt-4 lg:inline-block lg:mt-0 mr-8 hover:underline"
       >
         利用規約
       </a>
@@ -26,12 +26,20 @@
       </a>
     </div>
 
-    <a
-      href="/login"
-      class="block mt-4 lg:inline-block lg:mt-0 mr-4 hover:underline"
-    >
-      ログイン
-    </a>
+    <div>
+      <a
+        href="/login"
+        class="block mt-4 lg:inline-block lg:mt-0 mr-4 hover:underline"
+      >
+        ログイン
+      </a>
+      <a
+        href="/register"
+        class="block mt-4 lg:inline-block lg:mt-0 hover:underline"
+      >
+        新規登録
+      </a>
+    </div>
   </div>
 </nav>
 <hr class="border-gray-200 mx-4" />
