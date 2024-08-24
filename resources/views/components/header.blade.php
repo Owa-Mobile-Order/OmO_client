@@ -11,7 +11,7 @@
     {{-- ロゴ画像を表示する --}}
     <div class="flex items-center flex-shrink-0 text-black mr-6">
       <a href="/">
-        <img class="h-8" src="img/logo.png" alt="Logo" />
+        <img class="h-8" src="/img/logo.png" alt="Logo" />
       </a>
     </div>
 
