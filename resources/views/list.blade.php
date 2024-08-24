@@ -79,24 +79,26 @@
     </ul>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="menuItems">
       @foreach ($items as $item)
-        <div class="mb-4" data-category="{{ $item['category'] }}">
+        <div class="mb-4" data-category="{{ $item->category_id }}">
           <a
-            href="/detail/{{ $item['id'] }}"
+            href="/detail/{{ $item->id }}"
             class="text-decoration-none text-gray-900"
           >
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
               <img
-                src="https://placehold.jp/300x300.png"
+                src="{{ $item->image_path }}"
                 class="w-full h-48 object-cover"
-                alt="{{ $item['name'] }}"
+                alt="{{ $item->name }}"
               />
               <div class="p-4">
                 <div class="flex justify-between items-center">
                   <h5 class="text-lg font-semibold mb-0">
-                    {{ $item['name'] }}
+                    {{ $item->name }}
                   </h5>
                   <p class="mb-0">
-                    <strong class="text-2xl text-red-600">¥800</strong>
+                    <strong class="text-2xl text-red-600">
+                      ¥{{ $item->price }}
+                    </strong>
                   </p>
                 </div>
               </div>

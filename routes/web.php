@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ItemController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -8,9 +8,8 @@ Route::get('/', function () {
   return view('index');
 });
 
-Route::get('/item/{id}', [ItemController::class, 'detail']);
-
-Route::get('/order', [ItemController::class, 'index']);
+Route::get('/order', [OrderController::class, 'index']);
+Route::get('/order/{id}', [OrderController::class, 'detail']);
 
 Route::get('/login', [LoginController::class, 'index']);
 
