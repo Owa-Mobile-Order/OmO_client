@@ -28,10 +28,10 @@
         <button
           class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
           id="noodles-tab"
-          data-category="noodles"
+          data-category="1"
           type="button"
           role="tab"
-          aria-controls="noodles"
+          aria-controls="1"
           aria-selected="false"
         >
           麺類
@@ -41,10 +41,10 @@
         <button
           class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
           id="donburi-tab"
-          data-category="donburi"
+          data-category="2"
           type="button"
           role="tab"
-          aria-controls="donburi"
+          aria-controls="2"
           aria-selected="false"
         >
           丼類
@@ -54,10 +54,10 @@
         <button
           class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
           id="teishoku-tab"
-          data-category="teishoku"
+          data-category="3"
           type="button"
           role="tab"
-          aria-controls="teishoku"
+          aria-controls="3"
           aria-selected="false"
         >
           定食
@@ -67,10 +67,10 @@
         <button
           class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
           id="others-tab"
-          data-category="others"
+          data-category="3"
           type="button"
           role="tab"
-          aria-controls="others"
+          aria-controls="3"
           aria-selected="false"
         >
           その他
