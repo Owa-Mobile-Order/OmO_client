@@ -4,7 +4,6 @@
 @endsection
 
 @section('head')
-  <link rel="stylesheet" href="/css/style.css" />
   <script src="/js/menu_filter.js"></script>
 @endsection
 
