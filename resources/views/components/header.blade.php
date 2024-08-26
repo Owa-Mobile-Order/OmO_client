@@ -4,18 +4,18 @@
 ></script>
 
 <div x-data="{ open: false }" class="fixed w-full bg-white">
-  {{-- 全体 --}}
+  <!-- 全体 -->
   <nav
     class="flex items-center justify-between lg:justify-start flex-wrap lg:flex-nowrap px-6 py-4 lg:px-24 lg:py-5"
   >
-    {{-- ロゴ画像を表示する --}}
+    <!-- ロゴ画像を表示する -->
     <div class="flex items-center flex-shrink-0 text-black mr-6">
       <a href="/">
         <img class="h-8" src="/img/logo.png" alt="Logo" />
       </a>
     </div>
 
-    {{-- メニューボタン --}}
+    <!-- メニューボタン -->
     <div class="block lg:hidden">
       <button
         @click="open = !open"
@@ -32,7 +32,7 @@
       </button>
     </div>
 
-    {{-- メニュー --}}
+    <!-- メニュー -->
     <div
       class="mx-2 w-full lg:justify-between lg:w-full lg:flex lg:items-center"
       :class="{ 'block': open, 'hidden': !open }"
@@ -59,11 +59,15 @@
       </div>
       <hr class="my-4" :class="{ 'block': open, 'hidden': !open }" />
       <div class="flex flex-col lg:inline-block lg:mt-0">
+        <!-- ログイン/ログアウト時のメニュー -->
         @guest
           <a href="/login" class="lg:mr-4 hover:underline">ログイン</a>
           <a href="/register" class="mt-4 lg:mt-0 hover:underline">新規登録</a>
         @else
-          
+          <div class="flex relative">
+            <img class="h-10 mx-2 rounded-full" src="{{ Auth::user()->avatar_path }}" alt="avatar" />
+            <p class="text-lg m-auto">{{ Auth::user()->name }}</p>
+          </div>
         @endguest
       </div>
     </div>
