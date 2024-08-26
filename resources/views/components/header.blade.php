@@ -65,7 +65,11 @@
           <a href="/register" class="mt-4 lg:mt-0 hover:underline">新規登録</a>
         @else
           <div class="flex relative">
-            <img class="h-10 mx-2 rounded-full" src="{{ Auth::user()->avatar_path }}" alt="avatar" />
+            <img
+              class="h-10 mx-2 rounded-full"
+              src="{{ Auth::user()->avatar_path }}"
+              alt="avatar"
+            />
             <p class="text-lg m-auto">{{ Auth::user()->name }}</p>
           </div>
         @endguest
