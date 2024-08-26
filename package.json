@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@prettier/plugin-php": "^0.22.2",
+    "dotenv": "^16.4.5",
     "prettier-plugin-blade": "^2.1.19"
   }
 }

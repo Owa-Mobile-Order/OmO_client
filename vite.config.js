@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
+require('dotenv').config();
 
 export default defineConfig({
-  base: 'https://omo.ktrnds.com/',
+  base: process.env.APP_URL + '/',
   plugins: [
     laravel({
       input: [
