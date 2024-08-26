@@ -59,8 +59,12 @@
       </div>
       <hr class="my-4" :class="{ 'block': open, 'hidden': !open }" />
       <div class="flex flex-col lg:inline-block lg:mt-0">
-        <a href="/login" class="lg:mr-4 hover:underline">ログイン</a>
-        <a href="/register" class="mt-4 lg:mt-0 hover:underline">新規登録</a>
+        @guest
+          <a href="/login" class="lg:mr-4 hover:underline">ログイン</a>
+          <a href="/register" class="mt-4 lg:mt-0 hover:underline">新規登録</a>
+        @else
+          
+        @endguest
       </div>
     </div>
   </nav>

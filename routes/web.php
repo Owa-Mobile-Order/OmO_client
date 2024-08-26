@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,9 +12,9 @@ Route::get('/', function () {
 Route::get('/order/{id}', [OrderController::class, 'detail']);
 Route::get('/order', [OrderController::class, 'index']);
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, '__construct']);
 
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', [
   App\Http\Controllers\HomeController::class,
