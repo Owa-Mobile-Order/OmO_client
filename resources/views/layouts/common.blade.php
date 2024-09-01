@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
+    @vite('resources/css/app.css')
     <title>@yield('title')</title>
 
     <meta charset="UTF-8" />
@@ -11,13 +12,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     @yield('head')
-
-    @vite('resources/css/app.css')
   </head>
   <body>
     @include('components.header')
     <div class="pt-20">
       @yield('body')
+
+      <p class="text-center text-gray-600">©️2024 Harukoto</p>
     </div>
   </body>
 </html>

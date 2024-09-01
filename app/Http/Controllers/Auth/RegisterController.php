@@ -33,8 +33,10 @@ class RegisterController extends Controller
         'max:8',
         'unique:users',
         function ($attribute, $value, $fail) {
-          if (!DB::table('student_codes')->where('code', $value)->exists()) {
-            $fail('The selected student code is invalid.');
+          $sql = "SELECT * FROM `student_codes` WHERE `code` = $value";
+          $result = DB::select($sql);
+          if (empty($result)) {
+            $fail('その学籍番号は登録されていません');
           }
         },
       ],

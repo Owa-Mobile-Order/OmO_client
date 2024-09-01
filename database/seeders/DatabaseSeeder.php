@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
       'name' => 'Test User',
       'avatar_path' =>
         'https://cdn.discordapp.com/attachments/1149350818747781122/1277555246650097674/quote.jpg?ex=66cd978a&is=66cc460a&hm=5578f04344e356d80dedc71c8aa9f061b465329c1074f7f6852615deab00426a&',
-      'student_id' => 'TESTUSER',
+      'student_code' => 'TESTUSER',
       'created_at' => now(),
       'updated_at' => now(),
     ]);

@@ -69,7 +69,7 @@
               type="text"
               placeholder="招待コード"
               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 md:text-base md:leading-7 lg:leading-7 px-3 @error('invitation_code') is-invalid @enderror"
-              value="{{ old('invitation_code') }}"
+              value="{{ old('student_code') }}"
             />
           </div>
           @error('email')
