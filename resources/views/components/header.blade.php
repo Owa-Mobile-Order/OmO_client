@@ -53,9 +53,15 @@
         </a>
         <a
           href="/privacy"
-          class="block mt-4 lg:inline-block lg:mt-0 hover:underline"
+          class="block mt-4 mr-4 lg:inline-block lg:mt-0 hover:underline"
         >
           プライバシーポリシー
+        </a>
+        <a
+          href="/contact"
+          class="block mt-4 lg:inline-block lg:mt-0 hover:underline"
+        >
+          お問い合わせ
         </a>
       </div>
       <div class="flex flex-col lg:inline-block lg:mt-0">
