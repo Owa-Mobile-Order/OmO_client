@@ -17,10 +17,9 @@
     @include('components.header')
     <div class="pt-20">
       @yield('body')
-
-      <p class="text-center text-gray-600">
-        &copy;2024 Harukoto All Rights Reserved
-      </p>
     </div>
+    <p class="text-center text-gray-600">
+      &copy;2024 Harukoto All Rights Reserved
+    </p>
   </body>
 </html>
