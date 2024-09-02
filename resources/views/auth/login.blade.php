@@ -88,9 +88,9 @@
               <input
                 class="form-check-input"
                 type="checkbox"
-                name="remember"
-                id="remember"
-                {{ old('remember') ? 'checked' : '' }}
+                name="remember_me"
+                id="remember_me"
+                {{ old('remember_me') ? 'checked' : '' }}
               />
 
               <label class="form-check-label" for="remember">
