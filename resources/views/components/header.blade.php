@@ -46,7 +46,7 @@
           利用規約
         </a>
         <a
-          href="/privacy"
+          href="/privacy-policy"
           class="block mt-4 mr-4 lg:inline-block lg:mt-0 hover:underline"
         >
           プライバシーポリシー

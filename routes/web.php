@@ -3,6 +3,7 @@
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TermsController;
+use App\Http\Controllers\PrivacyPolicyController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,6 +14,7 @@ Route::get('/order/{id}', [OrderController::class, 'detail']);
 Route::get('/order', [OrderController::class, 'index'])->name('order');
 
 Route::get('/terms', [TermsController::class, 'index']);
+Route::get('/privacy-policy', [PrivacyPolicyController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
   Route::get('/profile', [ProfileController::class, 'edit'])->name(
