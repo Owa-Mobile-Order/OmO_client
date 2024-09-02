@@ -13,6 +13,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
   </head>
   <body class="flex flex-col min-h-screen">
+    <style>
+      * {
+        user-select: none;
+      }
+    </style>
     @include('components.header')
     <div class="flex flex-col items-center justify-center flex-grow">
       <div class="text-center flex items-center">

@@ -14,6 +14,11 @@
     @yield('head')
   </head>
   <body>
+    <style>
+      * {
+        user-select: none;
+      }
+    </style>
     @include('components.header')
     <div class="pt-20 min-h-screen">
       @yield('body')

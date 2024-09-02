@@ -1,10 +1,6 @@
-<script
-  src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js"
-  defer
-></script>
 <script src="/js/modal.js" defer></script>
 
-<div x-data="{ open: false }" class="fixed w-full bg-white">
+<div class="fixed w-full bg-white">
   <!-- 全体 -->
   <nav
     class="flex items-center justify-between lg:justify-start flex-wrap lg:flex-nowrap px-6 pt-4 pb-2 lg:px-24 lg:py-5"
@@ -19,7 +15,6 @@
     <!-- メニューボタン -->
     <div class="block lg:hidden">
       <button
-        @click="open = !open"
         class="flex items-center px-3 py-2 text-black border-0 hover:text-gray-700 rounded-full hover:bg-gray-200 transition"
       >
         <svg
@@ -36,7 +31,6 @@
     <!-- メニュー -->
     <div
       class="w-full px-1 lg:justify-between lg:w-full lg:flex lg:items-center"
-      :class="{ 'block': open, 'hidden': !open }"
     >
       <div>
         <a

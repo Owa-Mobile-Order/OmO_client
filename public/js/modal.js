@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener('click', function (event) {
     if (!userInfo.contains(event.target) && !userModal.contains(event.target)) {
-      userModal.classList.toggle('hidden');
+      userModal.classList.add('hidden');
     }
   });
 });
