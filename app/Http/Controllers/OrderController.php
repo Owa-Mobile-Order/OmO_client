@@ -17,7 +17,7 @@ class OrderController extends Controller
     $menuItems = $this->getMenuItems();
 
     // 表示に必要な値を渡す
-    return view('list', [
+    return view('order.list', [
       'items' => $menuItems,
     ]);
   }
@@ -26,7 +26,7 @@ class OrderController extends Controller
   {
     $item = $this->getMenuItems($id);
 
-    return view('detail', [
+    return view('order.detail', [
       'item' => $item,
     ]);
   }
