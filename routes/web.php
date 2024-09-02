@@ -14,12 +14,6 @@ Route::get('/order', [OrderController::class, 'index'])->name('order');
 
 Route::get('/terms', [TermsController::class, 'index']);
 
-Route::get('/dashboard', function () {
-  return view('dashboard');
-})
-  ->middleware(['auth', 'verified'])
-  ->name('dashboard');
-
 Route::middleware('auth')->group(function () {
   Route::get('/profile', [ProfileController::class, 'edit'])->name(
     'profile.edit'
