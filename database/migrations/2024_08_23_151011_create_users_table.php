@@ -19,6 +19,7 @@ return new class extends Migration {
       $table->text('avatar_path')->nullable();
       $table->string('student_code', 8);
 
+      $table->rememberToken();
       $table->timestamps();
     });
   }
