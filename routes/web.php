@@ -15,8 +15,6 @@ Route::get('/order', [OrderController::class, 'index']);
 
 Route::get('/terms', [TermsController::class, 'index']);
 
-Route::get('/login', [LoginController::class, '__construct']);
-
 Auth::routes();
 
 Route::get('/home', [

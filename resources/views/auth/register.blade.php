@@ -128,6 +128,38 @@
           </div>
         </div>
 
+        <label
+          for="terms"
+          class="block text-sm font-medium leading-6 text-gray-900 sm:text-base md:text-base"
+        >
+          <input
+            id="terms"
+            name="terms"
+            type="checkbox"
+            required
+            class="mr-2 rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
+          />
+          <a
+            class="leading-6 text-indigo-600 hover:text-indigo-500"
+            href="/terms"
+          >
+            利用規約
+          </a>
+          に同意する
+        </label>
+        @error('terms')
+          <span class="invalid-feedback text-xs text-red-500" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+        @enderror
+
+        <div class="flex justify-center text-center">
+          {!! app('captcha')->display($attributes = [], $options = ['lang' => 'ja']) !!}
+          @error('g-recaptcha-response')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+        </div>
+
         <div>
           <button
             type="submit"
