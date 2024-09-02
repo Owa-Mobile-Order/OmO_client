@@ -18,6 +18,7 @@ return new class extends Migration {
       $table->string('name', 32);
       $table->text('avatar_path')->nullable();
       $table->string('student_code', 8);
+      $table->tinyInteger('is_admin')->default(0);
 
       $table->rememberToken();
       $table->timestamps();

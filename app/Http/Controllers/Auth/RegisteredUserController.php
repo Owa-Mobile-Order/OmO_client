@@ -68,6 +68,7 @@ class RegisteredUserController extends Controller
       'password' => Hash::make($request->password),
       'avatar_path' => null,
       'student_code' => $request->student_code,
+      'remember_token' => null,
     ]);
 
     event(new Registered($user));
