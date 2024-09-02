@@ -52,7 +52,7 @@
           利用規約
         </a>
         <a
-          href="/privacy"
+          href="/privacy-policy"
           class="block mt-4 mr-4 lg:inline-block lg:mt-0 hover:underline"
         >
           プライバシーポリシー
@@ -77,7 +77,7 @@
               <div class="flex">
                 <img
                   class="h-10 rounded-full mr-2"
-                  src="{{ Auth::user()->avatar_path }}"
+                  src="{{ Auth::user()->avatar_path ?? '/img/avatar.png' }}"
                   alt="avatar"
                 />
                 <div class="flex-col flex">
