@@ -41,13 +41,17 @@
               </h3>
             </div>
           </div>
-          <button
-            {{ $item->is_available ? 'disabled' : '' }}
-            class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded w-full transition duration-300 ease-in-out order-button cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:hover:bg-gray-400 disabled:text-gray-700"
-          >
-            <i class="bi bi-cart-plus mr-2"></i>
-            {{ $item->is_available ? '利用不可' : '注文する' }}
-          </button>
+          <form method="POST" action="/order/submit">
+            @csrf
+            <input type="hidden" name="item_id" value="{{ $item->id }}" />
+            <button
+              {{ $item->is_available ? '' : 'disabled' }}
+              class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded w-full transition duration-300 ease-in-out order-button cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:hover:bg-gray-400 disabled:text-gray-700"
+            >
+              <i class="bi bi-cart-plus mr-2"></i>
+              {{ $item->is_available ? '注文する' : '利用不可' }}
+            </button>
+          </form>
         </div>
       </div>
     </div>

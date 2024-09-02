@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Events\OrderSubmitted;
+use function Laravel\Prompts\alert;
 
 class OrderController extends Controller
 {
@@ -29,6 +32,27 @@ class OrderController extends Controller
     return view('order.detail', [
       'item' => $item,
     ]);
+  }
+
+  public function submit(Request $request)
+  {
+    $userId = $request->user()->id;
+
+    $orderData = [
+      'user_id' => $userId,
+      'status' => 'pending',
+      'created_at' => now(),
+      'updated_at' => now(),
+    ];
+
+    $orderId = DB::table('orders')->insertGetId($orderData);
+
+    $order = DB::table('orders')->where('id', $orderId)->first();
+
+    event(new OrderSubmitted($order));
+
+    $request->session()->put('order_completed', true);
+    return redirect('/thanks');
   }
 
   // メニューを取得
