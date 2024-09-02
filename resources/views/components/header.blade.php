@@ -153,7 +153,7 @@
             >
               <img
                 class="h-10 mx-2 rounded-full"
-                src="{{ Auth::user()->avatar_path }}"
+                src="{{ Auth::user()->avatar_path ?? '/img/avatar.png' }}"
                 alt="avatar"
               />
               <p class="text-lg my-auto">{{ Auth::user()->name }}</p>
