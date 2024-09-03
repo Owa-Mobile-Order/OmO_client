@@ -4,10 +4,16 @@
 @endsection
 
 @section('head')
-
+  
 @endsection
 
 @section('body')
+  <script>
+    // ページを30秒ごとにリロードする
+    setTimeout(function () {
+      location.reload();
+    }, 30000); // 30000ミリ秒 = 30秒
+  </script>
   <div class="container mx-auto p-4">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="menuItems">
       @foreach ($orders as $order)
