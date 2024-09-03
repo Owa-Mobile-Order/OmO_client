@@ -9,73 +9,73 @@
 
 @section('body')
   <div class="container mx-auto p-4">
-    <ul class="flex mb-4 space-x-2" id="menuTabs" role="tablist">
-      <li role="presentation">
-        <button
-          class="px-4 py-2 rounded-full bg-blue-500 text-white"
-          id="all-tab"
-          data-category="all"
-          type="button"
-          role="tab"
-          aria-controls="all"
-          aria-selected="true"
-        >
-          すべて
-        </button>
-      </li>
-      <li role="presentation">
-        <button
-          class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
-          id="noodles-tab"
-          data-category="1"
-          type="button"
-          role="tab"
-          aria-controls="1"
-          aria-selected="false"
-        >
-          麺類
-        </button>
-      </li>
-      <li role="presentation">
-        <button
-          class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
-          id="donburi-tab"
-          data-category="2"
-          type="button"
-          role="tab"
-          aria-controls="2"
-          aria-selected="false"
-        >
-          丼類
-        </button>
-      </li>
-      <li role="presentation">
-        <button
-          class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
-          id="teishoku-tab"
-          data-category="3"
-          type="button"
-          role="tab"
-          aria-controls="3"
-          aria-selected="false"
-        >
-          定食
-        </button>
-      </li>
-      <li role="presentation">
-        <button
-          class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
-          id="others-tab"
-          data-category="4"
-          type="button"
-          role="tab"
-          aria-controls="4"
-          aria-selected="false"
-        >
-          その他
-        </button>
-      </li>
-    </ul>
+{{--    <ul class="flex mb-4 space-x-2" id="menuTabs" role="tablist">--}}
+{{--      <li role="presentation">--}}
+{{--        <button--}}
+{{--          class="px-4 py-2 rounded-full bg-blue-500 text-white"--}}
+{{--          id="all-tab"--}}
+{{--          data-category="all"--}}
+{{--          type="button"--}}
+{{--          role="tab"--}}
+{{--          aria-controls="all"--}}
+{{--          aria-selected="true"--}}
+{{--        >--}}
+{{--          すべて--}}
+{{--        </button>--}}
+{{--      </li>--}}
+{{--      <li role="presentation">--}}
+{{--        <button--}}
+{{--          class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"--}}
+{{--          id="noodles-tab"--}}
+{{--          data-category="1"--}}
+{{--          type="button"--}}
+{{--          role="tab"--}}
+{{--          aria-controls="1"--}}
+{{--          aria-selected="false"--}}
+{{--        >--}}
+{{--          麺類--}}
+{{--        </button>--}}
+{{--      </li>--}}
+{{--      <li role="presentation">--}}
+{{--        <button--}}
+{{--          class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"--}}
+{{--          id="donburi-tab"--}}
+{{--          data-category="2"--}}
+{{--          type="button"--}}
+{{--          role="tab"--}}
+{{--          aria-controls="2"--}}
+{{--          aria-selected="false"--}}
+{{--        >--}}
+{{--          丼類--}}
+{{--        </button>--}}
+{{--      </li>--}}
+{{--      <li role="presentation">--}}
+{{--        <button--}}
+{{--          class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"--}}
+{{--          id="teishoku-tab"--}}
+{{--          data-category="3"--}}
+{{--          type="button"--}}
+{{--          role="tab"--}}
+{{--          aria-controls="3"--}}
+{{--          aria-selected="false"--}}
+{{--        >--}}
+{{--          定食--}}
+{{--        </button>--}}
+{{--      </li>--}}
+{{--      <li role="presentation">--}}
+{{--        <button--}}
+{{--          class="px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"--}}
+{{--          id="others-tab"--}}
+{{--          data-category="4"--}}
+{{--          type="button"--}}
+{{--          role="tab"--}}
+{{--          aria-controls="4"--}}
+{{--          aria-selected="false"--}}
+{{--        >--}}
+{{--          その他--}}
+{{--        </button>--}}
+{{--      </li>--}}
+{{--    </ul>--}}
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="menuItems">
       @foreach ($items as $item)
         <div class="mb-4" data-category="{{ $item->category_id }}">
