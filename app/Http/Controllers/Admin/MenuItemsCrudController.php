@@ -26,7 +26,7 @@ class MenuItemsCrudController extends CrudController
    */
   public function setup()
   {
-    CRUD::setModel(\App\Models\MenuItems::class);
+    CRUD::setModel(\App\Models\MenuItem::class);
     CRUD::setRoute(config('backpack.base.route_prefix') . '/menu-items');
     CRUD::setEntityNameStrings('menu items', 'menu items');
   }

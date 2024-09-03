@@ -8,7 +8,7 @@
     <nav class="mb-4">
       <ol class="flex">
         <li>
-          <a href="/order" class="text-blue-500 hover:text-blue-700">
+          <a href="/dashboard.blade" class="text-blue-500 hover:text-blue-700">
             メニュー一覧
           </a>
         </li>

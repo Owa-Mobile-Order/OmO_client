@@ -14,6 +14,7 @@ return new class extends Migration {
       $table->id()->primary()->autoIncrement();
 
       $table->bigInteger('user_id')->unsigned();
+      $table->smallInteger('menu_id');
       $table->text('status');
 
       $table->timestamps();

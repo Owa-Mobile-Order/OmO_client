@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MenuItem;
+use App\Models\Orders;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Events\OrderSubmitted;
-use function Laravel\Prompts\alert;
 
 class OrderController extends Controller
 {
@@ -16,10 +15,8 @@ class OrderController extends Controller
 
   public function index()
   {
-    // データベースからデータを取得
     $menuItems = $this->getMenuItems();
 
-    // 表示に必要な値を渡す
     return view('order.list', [
       'items' => $menuItems,
     ]);
@@ -34,6 +31,24 @@ class OrderController extends Controller
     ]);
   }
 
+  public function orders()
+  {
+    $orders = $this->getOrders();
+
+    return view('dashboard.dashboard', [
+      'orders' => $orders,
+    ]);
+  }
+
+  public function order($id = null)
+  {
+    $order = $this->getOrders($id);
+
+    return view('dashboard.detail', [
+      'order' => $order,
+    ]);
+  }
+
   public function submit(Request $request)
   {
     $userId = $request->user()->id;
@@ -41,27 +56,67 @@ class OrderController extends Controller
     $orderData = [
       'user_id' => $userId,
       'status' => 'pending',
+      'menu_id' => $request->input('item_id'),
       'created_at' => now(),
       'updated_at' => now(),
     ];
 
-    $orderId = DB::table('orders')->insertGetId($orderData);
-
-    $order = DB::table('orders')->where('id', $orderId)->first();
-
-    event(new OrderSubmitted($order));
+    $orderId = Orders::create($orderData)->id;
 
     $request->session()->put('order_completed', true);
     return redirect('/thanks');
   }
 
-  // メニューを取得
+  public function update(Request $request, $id)
+  {
+    $order = Orders::find($id);
+
+    if (!$order) {
+      return redirect()->back()->with('error', 'Order not found.');
+    }
+
+    $status = $request->input('status');
+
+    switch ($status) {
+      case 'cancelled':
+        $order->delete();
+        return redirect('/dashboard')->with(
+          'success',
+          'Order cancelled and deleted.'
+        );
+      case 'pending':
+        $order->status = 'pending';
+        break;
+      case 'completed':
+        $order->status = 'confirmed';
+        break;
+      default:
+        return redirect()->back()->with('error', 'Invalid status.');
+    }
+
+    $order->save();
+    return redirect('/dashboard')->with('success', 'Order status updated.');
+  }
+
   private function getMenuItems($id = null)
   {
     if ($id) {
-      return DB::table('menu_items')->where('id', $id)->first();
+      return MenuItem::find($id);
     }
 
-    return DB::table('menu_items')->orderBy('name', 'asc')->get();
+    return MenuItem::orderBy('name', 'asc')->get();
+  }
+
+  private function getOrders($id = null)
+  {
+    if ($id) {
+      return Orders::with('menuItem')->find($id);
+    }
+
+    return Orders::with('menuItem')
+      ->where('status', 'pending')
+      ->orderBy('created_at', 'desc')
+      ->get()
+      ->toArray();
   }
 }

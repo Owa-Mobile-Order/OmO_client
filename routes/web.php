@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TermsController;
@@ -19,9 +18,14 @@ Route::get('/order', [OrderController::class, 'index'])->name('order');
 Route::get('/terms', [TermsController::class, 'index']);
 Route::get('/privacy-policy', [PrivacyPolicyController::class, 'index']);
 
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name(
-  'dashboard'
+Route::patch('/dashboard/update/{id}', [
+  OrderController::class,
+  'update',
+])->name('dashboard.update');
+Route::get('/dashboard/{id}', [OrderController::class, 'order'])->name(
+  'dashboard.detail'
 );
+Route::get('/dashboard', [OrderController::class, 'orders'])->name('dashboard');
 
 Route::get('/error', function () {
   return view('order.error');
