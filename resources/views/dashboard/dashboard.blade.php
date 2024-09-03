@@ -4,7 +4,7 @@
 @endsection
 
 @section('head')
-  @vite('resources/js/echo.js')
+
 @endsection
 
 @section('body')

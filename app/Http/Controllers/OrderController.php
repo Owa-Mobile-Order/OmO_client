@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\OrderCreated;
 use App\Models\MenuItem;
 use App\Models\Orders;
 use Illuminate\Http\Request;
@@ -62,6 +63,8 @@ class OrderController extends Controller
     ];
 
     $orderId = Orders::create($orderData)->id;
+
+    event(new OrderCreated(Orders::with(['menuItem', 'user'])->find($orderId)));
 
     $request->session()->put('order_completed', true);
     return redirect('/thanks');
