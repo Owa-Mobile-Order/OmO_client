@@ -110,10 +110,10 @@ class OrderController extends Controller
   private function getOrders($id = null)
   {
     if ($id) {
-      return Orders::with('menuItem')->find($id);
+      return Orders::with(['menuItem', 'user'])->find($id);
     }
 
-    return Orders::with('menuItem')
+    return Orders::with(['menuItem', 'user'])
       ->where('status', 'pending')
       ->orderBy('created_at', 'desc')
       ->get()

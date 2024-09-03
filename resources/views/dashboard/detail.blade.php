@@ -27,6 +27,10 @@
         />
       </div>
       <div class="md:w-1/2 flex flex-col justify-between">
+        <div class="mb-4">
+          <h2 class="text-xl font-bold">{{ $order['user']['name'] }}</h2>
+          <p class="text-gray-500">{{ $order['user']['student_code'] }}</p>
+        </div>
         <p class="mb-4">
           {{ $order['menuItem']['description'] }}
         </p>

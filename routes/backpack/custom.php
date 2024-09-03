@@ -22,7 +22,6 @@ Route::group(
     Route::crud('user', 'UserCrudController');
     Route::crud('student-codes', 'StudentCodesCrudController');
     Route::crud('orders', 'OrdersCrudController');
-    Route::crud('order-items', 'OrderItemsCrudController');
     Route::crud('menu-items', 'MenuItemsCrudController');
     Route::crud('categories', 'CategoriesCrudController');
   }

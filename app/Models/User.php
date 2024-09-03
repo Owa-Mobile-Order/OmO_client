@@ -12,6 +12,9 @@ class User extends Authenticatable
   use CrudTrait;
   use HasFactory, Notifiable;
 
+  protected $table = 'users';
+  protected $guarded = ['id'];
+
   protected $fillable = [
     'email',
     'name',
@@ -20,4 +23,9 @@ class User extends Authenticatable
     'student_code',
     'is_admin',
   ];
+
+  public function orders()
+  {
+    return $this->hasMany(Orders::class, 'user_id');
+  }
 }

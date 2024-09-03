@@ -5,7 +5,6 @@
 
 @section('head')
   @vite('resources/js/echo.js')
-  @vite('resources/js/dashboard_filter.js')
 @endsection
 
 @section('body')
@@ -18,6 +17,12 @@
             class="text-decoration-none text-gray-900"
           >
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <div class="p-4">
+                <h2 class="text-xl font-bold">{{ $order['user']['name'] }}</h2>
+                <p class="text-gray-500">
+                  {{ $order['user']['student_code'] }}
+                </p>
+              </div>
               <img
                 src="{{ $order['menu_item']['image_path'] }}"
                 class="w-full h-48 object-cover"
