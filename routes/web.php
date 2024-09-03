@@ -7,6 +7,7 @@ use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Middleware\EnsureOrderCompleted;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckAdmin;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
   return view('index');
@@ -39,6 +40,14 @@ Route::middleware(['web', EnsureOrderCompleted::class])->group(function () {
     return view('order.thanks');
   });
 });
+
+Route::get('/contact/thanks', function () {
+  return view('contact.thanks');
+});
+Route::get('/contact', function () {
+  return view('contact.contact');
+});
+Route::post('/contact', [ContactController::class, 'sendToDiscord']);
 
 Route::middleware('auth')->group(function () {
   Route::get('/settings', [ProfileController::class, 'edit'])->name(
