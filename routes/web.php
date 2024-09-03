@@ -6,6 +6,7 @@ use App\Http\Controllers\TermsController;
 use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Middleware\EnsureOrderCompleted;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckAdmin;
 
 Route::get('/', function () {
   return view('index');
@@ -25,7 +26,9 @@ Route::patch('/dashboard/update/{id}', [
 Route::get('/dashboard/{id}', [OrderController::class, 'order'])->name(
   'dashboard.detail'
 );
-Route::get('/dashboard', [OrderController::class, 'orders'])->name('dashboard');
+Route::get('/dashboard', [OrderController::class, 'orders'])
+  ->name('dashboard')
+  ->middleware(CheckAdmin::class);
 
 Route::get('/error', function () {
   return view('order.error');
